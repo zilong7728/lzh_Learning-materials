@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document properties and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,final]{memoir}
+\usepackage{CJKutf8}%中文支持
+
+% misc
+\renewcommand{\familydefault}{bch}	% font
+\pagestyle{empty}					% no pagenumbering
+\setlength{\parindent}{0pt}			% no paragraph indentation
+% required packages (add your own)
+\usepackage{flowfram}% column layou
+\usepackage{marvosym}
+\usepackage{textcomp}
+
+\usepackage[top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}% margins
+\usepackage{graphicx}										% figures
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}  %蓝色
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}										% URLs
+\usepackage[usenames,dvipsnames]{xcolor}					% color
+\usepackage{multicol}										% columns env.
+	\setlength{\multicolsep}{0pt}
+\usepackage{paralist}										% compact lists
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create column layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define length commands
+\setlength{\vcolumnsep}{\baselineskip}
+\setlength{\columnsep}{\vcolumnsep}
+%定义主题颜色，可选颜色 Maroon，ForestGreen，DarkOrchid，RoyalBlue,Turquoise,Cyan,etc,更多颜色参考xcolor包的颜色定义
+\newcommand{\myThemeColor}{RoyalBlue}
+% frame setup (flowfram package)
+% left frame
+\newflowframe{0.23\textwidth}{\textheight}{0pt}{0pt}[left]
+	\newlength{\LeftMainSep}
+	\setlength{\LeftMainSep}{0.23\textwidth}
+	\addtolength{\LeftMainSep}{1\columnsep}
+ 
+% small static frame for the vertical line
+\newstaticframe{1.5pt}{\textheight}{\LeftMainSep}{0pt}
+ 
+% content of the static frame
+\begin{staticcontents}{1} %绘制分割线，使用tikz包绘制。如需改变风格线样式，请参考tikz教程，对于新手，不建议修改。
+\hfill
+\tikz{%
+	\draw[loosely dotted,color=\myThemeColor,line width=1.5pt,yshift=0]
+	(0,0) -- (0,\textheight);}%
+\hfill\mbox{}
+\end{staticcontents}
+ 
+% right frame
+\addtolength{\LeftMainSep}{1.5pt}
+\addtolength{\LeftMainSep}{1\columnsep}
+\newflowframe{0.7\textwidth}{\textheight}{\LeftMainSep}{0pt}[main01]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define macros (for convience)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Sep}{\vspace{1em}}
+\newcommand{\SmallSep}{\vspace{0.9em}}
+
+\newenvironment{AboutMe}
+	{\ignorespaces\textbf{\color{\myThemeColor} About me}}
+	{\Sep\ignorespacesafterend}
+%定义section	
+\newcommand{\CVSection}[1]
+	{\Large\textbf{#1}\par
+	\vspace{0.2cm}\normalsize\normalfont}
+
+\newcommand{\CVItem}[1]
+	{\textbf{\color{\myThemeColor} #1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{CJK*}{UTF8}{gbsn}%选择字体，黑体
+% Left frame 左边内容在此定义
+%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\hfill
+	\includegraphics[width=0.8\columnwidth]{photo}
+	\vspace{-7cm}
+\end{figure}
+\begin{flushright}\footnotesize
+.\\
+\vskip 6cm
+    \raggedright
+	\CVItem{{\large 个人信息:}}\\
+	电子邮件:\\
+	\href{mailto:lzh656739092@gmail.com}{lzh656739092@gmail.com}  \\
+	手机:\\
+	+86 - 15127079303(中国)
+		
+	\CVItem{{\large 语言能力:}}\\
+	\textit{\textbf{中文}：母语 \\\textbf{英语}：CET-4 554\\ }
+
+	
+
+	\SmallSep
+\end{flushright}\normalsize
+\framebreak
+
+
+% Right frame 右边内容在此定义
+%%%%%%%%%%%%%%%%%%%%
+\Huge\bfseries {\color{\myThemeColor} 刘~~正~~浩}\\
+\normalsize\normalfont
+
+% Education
+\CVSection{教育背景}
+\hrule
+\SmallSep
+\CVItem{2019 - 目前\hfill\textsc{电子科技大学(UESTC)，中国}}\\
+\textit{-英才实验学院}\\
+\\
+\CVItem{2016 - 2019\hfill\textsc{石家庄精英中学，中国}}\\
+\textit{-高中}\\
+\\
+\CVItem{2013 - 2019\hfill\textsc{石家庄市第28中学，中国}}\\
+\textit{-初中}\\
+
+% Experience
+\CVSection{实习经历}
+\hrule
+\SmallSep
+\textit{无}
+\\
+
+% CAMPU
+\CVSection{专业经历}
+\hrule
+\SmallSep
+\textit{无} 
+\\
+
+% HONORS & SCHOLARSHIPS
+\CVSection{个人荣誉}
+\hrule
+\SmallSep
+	\begin{tabular}{l|l}
+		$\Rightarrow$ 2013-2016&\textit{连续三年获得三好学生称号}\footnotesize\\
+		$\Rightarrow$ 2015-2016&\textit{连续两年获得优秀课代表称号}\\
+		$\Rightarrow$ 2016-2019&\textit{连续三年获得优秀课代表称号}\\
+	\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{CJK*}
+\end{document}

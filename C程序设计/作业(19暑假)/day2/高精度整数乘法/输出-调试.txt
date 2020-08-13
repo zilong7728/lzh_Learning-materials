@@ -1,0 +1,18 @@
+﻿“高精度整数乘法.exe”(Win32): 已加载“D:\编程\作业(暑假)\day2\高精度整数乘法\Debug\高精度整数乘法.exe”。已加载符号。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\ntdll.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\kernel32.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\KernelBase.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\vcruntime140d.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\ucrtbased.dll”。
+线程 0x710 已退出，返回值为 0 (0x0)。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\kernel.appcore.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\msvcrt.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\rpcrt4.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\sspicli.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\cryptbase.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\bcryptprimitives.dll”。
+“高精度整数乘法.exe”(Win32): 已加载“C:\Windows\SysWOW64\sechost.dll”。
+线程 0x4308 已退出，返回值为 0 (0x0)。
+线程 0x890 已退出，返回值为 0 (0x0)。
+线程 0x39c4 已退出，返回值为 0 (0x0)。
+程序“[12236] 高精度整数乘法.exe”已退出，返回值为 0 (0x0)。

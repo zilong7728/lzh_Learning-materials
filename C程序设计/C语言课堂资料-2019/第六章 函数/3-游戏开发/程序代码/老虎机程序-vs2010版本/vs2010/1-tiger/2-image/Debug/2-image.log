@@ -1,0 +1,30 @@
+﻿生成启动时间为 2016-12-21 16:03:57。
+     1>项目“c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\2-image\2-image.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\2-image.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt image.cpp
+         image.cpp
+     1>c:\documents and settings\administrator\我的文档\visual studio 2010\projects\1-tiger\2-image\image.cpp(12): warning C4101: “i”: 未引用的局部变量
+     1>c:\documents and settings\administrator\我的文档\visual studio 2010\projects\1-tiger\2-image\image.cpp(12): warning C4101: “j”: 未引用的局部变量
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\Debug\2-image.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\2-image.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\Debug\2-image.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\Debug\2-image.lib" /MACHINE:X86 "Debug\2-image.exe.embed.manifest.res"
+         Debug\acllib.obj
+         Debug\image.obj
+       Manifest:
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\2-image.exe.embed.manifest" /manifest "Debug\2-image.exe.intermediate.manifest"
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         2-image.vcxproj -> c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\Debug\2-image.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\2-image.unsuccessfulbuild”。
+         正在对“Debug\2-image.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“c:\documents and settings\administrator\我的文档\visual studio 2010\Projects\1-tiger\2-image\2-image.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.42

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1-tiger", "1-tiger\1-tiger.vcxproj", "{53D124E6-C05D-4F1B-984E-30A4368F12E1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2-image", "2-image\2-image.vcxproj", "{82BB7E7B-CDF9-4E59-851D-85BA8B947917}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53D124E6-C05D-4F1B-984E-30A4368F12E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53D124E6-C05D-4F1B-984E-30A4368F12E1}.Debug|Win32.Build.0 = Debug|Win32
+		{53D124E6-C05D-4F1B-984E-30A4368F12E1}.Release|Win32.ActiveCfg = Release|Win32
+		{53D124E6-C05D-4F1B-984E-30A4368F12E1}.Release|Win32.Build.0 = Release|Win32
+		{82BB7E7B-CDF9-4E59-851D-85BA8B947917}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82BB7E7B-CDF9-4E59-851D-85BA8B947917}.Debug|Win32.Build.0 = Debug|Win32
+		{82BB7E7B-CDF9-4E59-851D-85BA8B947917}.Release|Win32.ActiveCfg = Release|Win32
+		{82BB7E7B-CDF9-4E59-851D-85BA8B947917}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

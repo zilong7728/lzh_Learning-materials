@@ -1,0 +1,3 @@
+﻿  源.cpp
+D:\编程\作业(暑假)\day1\day1-刘正浩-3\源.cpp(5,23): warning C4305:  “初始化”: 从“double”到“float”截断
+  day1-刘正浩-3.vcxproj -> D:\编程\作业(暑假)\day1\day1-刘正浩-3\Debug\day1-刘正浩-3.exe

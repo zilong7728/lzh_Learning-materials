@@ -1,0 +1,214 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={无穷小量的前世今生.md},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{无穷小量的前世今生.md}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hypertarget{header-n0}{%
+\section{无穷小量的前世今生}\label{header-n0}}
+
+\hypertarget{header-n2}{%
+\paragraph{刘正浩 2019270103005}\label{header-n2}}
+
+\hypertarget{header-n3}{%
+\subsubsection{0. 前奏}\label{header-n3}}
+
+无穷小量，一个听起来既熟悉又陌生的名词。我们在学习数学的过程中一定都听说过``无穷小量''这个概念，但无穷小量究竟是什么？打个比方好了：如果说数学是人类智力的那一顶王冠，那么``无穷小量''可以说是这顶王冠上最为璀璨的宝石之一。
+
+从古希腊到工业革命，从东方到西方，人们对无穷小量的追寻从未停止过。无数哲学家、数学家的思考与探究，让这个如幽灵一般诡秘的概念逐渐变得清晰起来；我们也能从中领悟到，数学，这座人类文明史上最宏伟壮丽的大厦，是怎样耗尽先贤的心血、聚集先贤的才智，一砖一瓦地被建立起来的。
+
+\hypertarget{header-n6}{%
+\subsubsection{1. 隐匿的幽灵}\label{header-n6}}
+
+早在古希腊，哲学家芝诺就提出了一个著名的佯谬：
+
+\emph{一只乌龟和人赛跑，人的速度比乌龟快一百倍，但在起跑时乌龟领先人99个单位。那么人能否追上乌龟？}
+
+现在我们都知道，人一定会追上乌龟，而且我们很轻易地就可以算出人追上乌龟花费的时间：
+
+\[\frac{{99}}{{100 - 1}} = 1个单位时间\]
+
+然而，芝诺却不这么认为。他是这样分析的：人要想追上乌龟，必须比乌龟多走过
+\(99\) 个单位；但在人走过 \(99\) 个单位的同时，乌龟又向前走了 \(0.99\)
+个单位；人在追上这 \(0.99\) 个单位的同时，乌龟又向前走了 \(0.0099\)
+个单位\ldots\ldots 也就是说，在芝诺的眼中，人永远追不上乌龟。
+
+换句话说，芝诺认为\textbf{人与乌龟之间很小的距离（也就是无穷小量）是永远不可能被忽略掉的，是永远不可能等于
+\(0\)
+的}。这在``正常人''的眼中是多么不合理的结论！由此可以看出，古希腊人已经拥有了关于无穷小量的模糊概念，但正因为芝诺佯谬的存在，古希腊的几何证明（当时的``数学''）中就此开除了无穷小量的``数学籍''。
+
+时间来到芝诺悖论之后七百年。在遥远的东方，数学家刘徽提出了计算圆周率的著名方法------割圆术。
+
+在割圆术中，他用弦代替弧计算多边形的面积来近似计算圆的面积，并在《九章算术注》中这样描述他的割圆术：\emph{``割之弥细，所失弥少，割之又割，以至于不可割，则与圆合体，而无所失矣。''}翻译成白话就是：（多边形）分割得越细，多边形与圆的差距就越来越小，一直分割一直分割，到了不能再继续分割的时候，多边形就和圆重合了，它们的面积差也就消失了。
+
+很明显，刘徽认为，\textbf{用来近似圆的多边形与圆之间面积之差（在分割数很大时同样是一个无穷小量），随着分割数越来越大而变得可以被忽略掉，也就是无穷小量可以等于
+\(0\) ！}这和芝诺得到的结论刚好相反！
+
+所以，无穷小量究竟能不能被忽略掉？它究竟是什么？是不是 \(0\)
+？抑或是只有在某些情况下它才能被看做
+\(0\)？在古代哲学家、数学家对数学的讨论过程中，就这样埋下了一颗名为无穷小量的定时炸弹。这个如幽灵般徘徊在数学世界上空的模糊概念，将在将来爆发出来，引发著名的第二次数学危机。
+
+\hypertarget{header-n17}{%
+\subsubsection{2. 幽灵现身}\label{header-n17}}
+
+由于古希腊的数学家们不把无穷小量作为``数学''中的一个概念，自第一次数学危机（希帕索斯发现无理数）之后的几百年间，数学这只``怪兽''始终以温和而又完美的姿态面对着人类------在人们看来，数学即将成为一个完美的体系，这个体系中没有任何的疑点，它就是真理的化身，可以用来解释世间万物。
+
+可真理哪有这么容易就能来到人们身边呢？既然无穷小量是真实存在的，那么将它排除在外的``数学''又怎么可能是完美的体系？在以往的探究中埋下的这颗定时炸弹，即将爆发。
+
+在公元十七世纪，两位伟人------牛顿和莱布尼茨诞生了。现在我们都说，是他们分别独自创立了微积分这一门学科。但实际上，在他们之前，还有许多伟人也对微积分这一学科有过贡献：
+
+\begin{itemize}
+\item
+  开普勒给出了公式：
+\end{itemize}
+
+\[\int_0^\theta  {\sin \theta d\theta  = } 1 - \cos \theta \\]
+
+\begin{itemize}
+\item
+  卡瓦列里给出了公式：
+\end{itemize}
+
+\[\int_0^x {{t^n}dt = } \frac{{{x^{n + 1}}}}{{n + 1}}\\]
+
+\begin{itemize}
+\item
+  费马给出了导数思想的雏形，以及著名的费马引理：若函数
+  \(f:(a,b)\rightarrow R\) 在 \(x_0∈(a,b)\) 处取得极值，且 \(f\) 在
+  \(x_0\) 处可导,则 \(f'(x_0)=0\) ；
+\item
+  帕斯卡注意到，很小的弧与切线可以互相替代，并在证明体积公式时略去了高阶无穷小；
+\item
+  巴罗（牛顿的恩师）给出了求切线的方法。
+\end{itemize}
+
+但不要误会，他们的``微积分''与我们现在所熟知的微积分有很大的差别。差别在哪里？差别正在于他们的``微积分''中的\textbf{极限理论是不完整的，使用的``无穷小量''这一概念更是扑朔迷离}。
+
+那么话说回来，无穷小量究竟是怎样引发一场数学危机的？
+
+举一个例子好了：求 \(f(x)=x^2\) 在 \(x=2\) 处的导数。牛顿是这样计算的：
+
+\[f'(2) = \frac{{{{(2 + \alpha )}^2} - {2^2}}}{\alpha } = \frac{{4\alpha  + {\alpha ^2}}}{\alpha } = 4 + \alpha  = 4\\]
+
+牛顿把 \(\alpha\)
+叫做``无穷小量''。猛一看这个式子好像像模像样的没什么毛病，于是牛顿就由此把他的理论推广开来，并用它解决了大量以前无法解决的问题。
+
+然而，当时英国的大主教贝克莱发现了这其中的矛盾。贝克莱于1734年专门写了一本书，攻击流数（导数）\emph{``是消失了的量的鬼魂\ldots\ldots 能消化得了二阶、三阶流数的人，是不会因吞食了神学论点就呕吐的。''}他说，用忽略高阶无穷小来消除了原有错误，\emph{``是依靠双重的错误得到了虽然不科学却是正确的结果''}。他是这样反驳牛顿的：要使前两个式子
+\(\frac{{{{(2 + \alpha )}^2} - {2^2}}}{\alpha }\) 、
+\(\frac{{4\alpha  + {\alpha ^2}}}{\alpha }\) 成立，\(\alpha\) 必须不等于
+\(0\)；但到了第三个式子 \(4 + \alpha\) 中，\(\alpha\) 居然又等于 \(0\)
+了\ldots\ldots 他还讽刺挖苦牛顿说：\emph{既然分子和分母都变成``无穷小''了，而无穷小作为一个量，\textbf{既不是
+\(0\) ，又不是非 \(0\) }，那它一定是``量的鬼魂''了！}
+
+虽然贝克莱提出疑问的动机并不是促进数学的发展，但他提出的这个问题对新兴的微积分学来说却是致命的：它动摇了微积分学的根基。
+
+在此后的两百年间，有无数数学家前赴后拥，尝试对无穷小量悖论展开证明。例如：麦克劳林试图从瞬时速度的方面对无穷小量进行阐述，泰勒则试图用差分法解释无穷小量，等等。但可惜的是，他们都没有成功，数学家们始终没能摆脱``无穷小量''这个飘荡的幽灵。
+
+\hypertarget{header-n44}{%
+\subsubsection{3. 幽灵的消散}\label{header-n44}}
+
+之所以会有关于无穷小量的悖论的出现，还是由于极限理论是不完善的，它还存在很大的缺陷。没有对极限这一概念的完美的阐述，也就不可能清晰地描述无穷小量这个概念。此时的微积分学就像一栋地基不牢的大厦，看上去壮丽辉煌、夺人眼球，但实际上马上就要倾倒，让几代人的心血付诸东流。
+
+好在江山代代出人才，在贝克莱提出质疑的两百年后，逐渐有数学家醒悟过来，开始对极限这一概念进行详细严谨的阐述。
+
+数学家达朗贝尔首先将微积分研究的问题转化成极限的问题，并这样解释极限：\emph{``一个变量趋近于一个固定的的量，并且趋近的程度小于任何给定的量''}。在这个阐述中，已经能看到
+\(\varepsilon  - \delta \)
+语言的影子了。然而，达朗贝尔同意逐渐消失的量（即无穷小量）是没有意义的。他斩钉截铁般地宣称：\emph{``一个量要么是有，要么是没有。如果是有，它就不可能消失；如果是没有，它就确实消失了。假设存在介于这两者之间的中间状态，那它就只能是一头由狮头羊身和蛇尾构成的吐火怪物。''}现在我们知道，他关于极限的表述有部分是正确的，但他关于无穷小量的认识却是错误的：无穷小量当然真实存在！
+
+之后，柯西在1821年出版的《分析教程》中如此给出极限的定义：\emph{``当属于一个变量的相继值无限地趋近某个固定值时，如果以这样一种方式告终，变量值同固定值之差小到我们希望的\textbf{任意小}，那么这个固定值就称为其他所有值的极限''}。柯西认为，极限是一个无限趋近的过程，是动态的、变化的。除此之外，他还给出了无穷小的定义：\emph{``当一个变量的连续数值无限减小（从而变得小于任何给定的值）时，这个变量就称为一个无穷小的量''}。但很可惜的是，柯西对``无穷小量的值究竟是多少''这个问题闭口不谈，他仍然没有把无穷小量这个概念解释清楚。
+
+后来，经过魏尔斯特拉斯、戴德金、康托尔等数学家的不懈努力，数学家们通过把极限论建立在严格的实数理论基础上的方法，形成了严谨地定义极限的
+\textbf{\(\varepsilon  - \delta \) 语言}。
+
+例如，用 \(\varepsilon  - \delta \) 语言描述 \(x \to x_0\)
+时的函数极限：
+
+设 \(f:\mathop U\limits^0 ({x_0}) \to R\) 是任一函数，若存在常数
+\(a \in R\) ，它与 \(f(x)\)
+满足如下关系：\(\forall \varepsilon  > 0\)，\(\exists \delta  > 0\)，使得当
+\(0 < \left| {x - {x_0}} \right| < \delta \) 时，恒有
+\(\left| {f(x) - a} \right| < \varepsilon \) ，则称 \(\alpha\) 是当
+\(x \to x_0\) 时 \(f(x)\) 的极限。
+
+有了 \(\varepsilon  - \delta \)
+语言，我们就可以轻易地完美解释贝克莱提出的疑问：对于 \(f(x)=x^2\) 在
+\(x=2\) 处的导数，
+
+\[f'(2) = \mathop {\lim }\limits_{\Delta x \to 0} \frac{{{{(2 + \Delta x)}^2} - {2^2}}}{{\Delta x}} = \mathop {\lim }\limits_{\Delta x \to 0} \frac{{4\Delta x + {{(\Delta x)}^2}}}{{\Delta x}} = \mathop {\lim }\limits_{\Delta x \to 0} (4 + \Delta x) = 4\]
+
+从上面的式子就可以看出，用极限来描述求导的过程，比起牛顿那种粗糙的做法是多么地优雅而又严谨！
+
+这样一来，无穷小量也就可以借助极限理论来进行明确的定义了：
+
+当 \(x \to x_0\)（或 \(x \to \infty\)）时，以零为极限的\textbf{函数}
+\(a(x)\) 称为当 \(x \to x_0\)（或 \(x \to \infty\)）的无穷小量。
+
+\textbf{无穷小量这个幽灵就此烟消云散}。我们可以清楚地知道，无穷小量是一个以
+\(0\) 为极限的函数，它不是 \(0\)
+，在计算中也绝对不能把它与绝对值很小的变量混为一谈。并且，一个函数是否是无穷小，与自变量的变化趋势也息息相关。例如：\(\frac{1}{x}\)
+是 \(x \to \infty\) 时的无穷小，因为只有当 \(x \to \infty\) 时才有
+\(\frac{1}{x} \to 0\) ；当 \(x \to x_0\) 时，\(\frac{1}{x}\)
+趋于一个有限值 \(\frac{1}{x_0}\) ；当 \(x \to 0\) 时，
+\(\frac{1}{x} \to \infty\)。在后两种情况下，\(\frac{1}{x}\)
+显然不是无穷小。
+
+既然微积分学最基础的理论------极限理论已经被精准地表述出来，余下内容的发展与完善也就是水到渠成的了。至于微积分学之后发展的详细过程，这里按下不表。
+
+\hypertarget{header-n59}{%
+\subsubsection{4. 终章}\label{header-n59}}
+
+人们对无穷小量的几千年探索历史告诉我们，任何一门学科的建立容不得半点马虎，所有的定义都必须是准确的、精炼的，否则这个学科即使发展的再快，内容再丰富，也会因为基础不牢而被驳倒甚至全盘否定。
+
+同时，我们也可以看到，任何学科的发展都不是一步到位的，而是经过无数次``发现错误→修正→发现新的错误→再修正''的过程才逐渐完善起来。
+
+我个人认为胡适说得很对：``大胆假设，小心求证''。科学研究者应当具有这样的特性：在对未知领域进行假设时一定要足够大胆，因为在研究前完全无法知晓未知领域究竟是什么样子的；但在验证假设时一定要小心小心再小心，因为在验证的过程中稍有纰漏就会使结论与事实相差甚远，正所谓``失之毫厘，谬以千里''是也。
+
+\end{document}

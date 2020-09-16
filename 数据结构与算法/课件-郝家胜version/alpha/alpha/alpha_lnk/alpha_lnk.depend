@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1458035125 source:c:\users\administrator\downloads\alpha\alpha.c
+	<stdio.h>
+	<assert.h>
+	"linear_list.h"
+	"list_app.h"
+
+1366256728 c:\users\administrator\downloads\alpha\linear_list.h
+
+1303454192 c:\users\administrator\downloads\alpha\list_app.h
+
+1366334515 source:c:\users\administrator\downloads\alpha\list_app.c
+	<stdio.h>
+	<assert.h>
+	"linear_list.h"
+	"list_app.h"
+

@@ -1,0 +1,132 @@
+///4QAM
+for SNR=-20:1:30
+    count=0; 
+    
+data_original=randsrc(128,2);%储存In
+data_conclude=rand(128,2);%初始化还原信号
+t01=0;%设定t0为阶跃点
+t02=1;
+t=0:0.1:129;
+t2=0:0.1:258;
+w = 1;
+
+tfutr = 0.5;
+sfutr = 1;
+g_real=0;
+g_imagine=0;
+h =stepfun(t,t01)-stepfun(t,t02);%h(t)信号
+for i=1:128
+g_real =g_real+ data_original(i,1)*(stepfun(t,t01+i-1)-stepfun(t,t02+i-1));
+g_imagine =g_imagine+ data_original(i,2)*(stepfun(t,t01+i-1)-stepfun(t,t02+i-1));
+%生成g(t)函数
+end 
+y_real=awgn(g_real,SNR);
+y_imagine=awgn(g_imagine,SNR);
+z_real=conv(g_real+y_real,h);%z是新的r(t)信号
+z_imagine=conv(g_imagine+y_imagine,h);%z是新的r(t)信号
+for j=1:128  %信号的采样
+   temp1= (z_real(1,10*j)-1)^2 +(z_imagine(1,10*j)-1)^2;%计算到1+j距离
+   temp2= (z_real(1,10*j)-1)^2 +(z_imagine(1,10*j)+1)^2;%计算到1-j距离
+   temp3= (z_real(1,10*j)+1)^2 +(z_imagine(1,10*j)-1)^2;%计算到-1+j距离
+   temp4= (z_real(1,10*j)+1)^2 +(z_imagine(1,10*j)+1)^2;%计算到-1-j距离
+   temp=[temp1 temp2 temp3 temp4];
+   w=min(temp);
+   if w==temp1
+      data_conclude(j,1) =1;
+      data_conclude(j,2) =1;
+   end
+   if w==temp2
+       data_conclude(j,1) =1;
+      data_conclude(j,2) =-1;           
+   end
+   if w==temp3
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =1; 
+   end
+   if w==temp4
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =-1; 
+   end
+end
+
+for i=1:128
+if (data_original(i,1)~=data_conclude(i,1))||(data_original(i,2)~=data_conclude(i,2))
+  count=count+1;  
+end  
+end
+p=count/128.0;
+%plot(SNR,p,'red');
+%hold on
+plot(SNR,p);
+%ber仿真值，ser比特仿真值，ber1理论误比特率，ser1理论误码率
+semilogy(SNR,p,'o' );
+title('4QAM-AWGN 信号的符号错误率')
+xlabel('SNR');ylabel('probability');
+legend('符号仿真');
+hold on
+end
+
+
+
+
+
+
+///16QAM
+nuber_symbol= 10000;%一共有1万个符号用于测试
+M=16;%阶数，表示16QAM
+graycode=[0 1 3 2 4 5 7 6 12 13 15 14 8 9 11 10];%格雷映射，十进制表示
+SNR=-20:1:20;%符号比，单位db,设置步长为1，由于semilogy函数的限制，将12改为20
+ebn0=10.^(SNR/10);%将db转为非线性的方式
+msg=randi([0,15],1,nuber_symbol);%随机产生0-15的符号，乘nsymbol得到原始数据
+msg1=graycode(msg+1);%格雷映射
+msgmod=qammod(msg1,M);%调用qammod函数，得到调制后的符号
+spow=norm(msgmod).^2/nuber_symbol;%a+bj取模的平方，即功率；功率除以整个符号得到平均功率
+for i= 1:length(SNR)
+    sigma=sqrt(spow/(2*ebn0(i))); 
+    rx=msgmod+sigma*(randn(1,length(msgmod))+1i*randn(1,length(msgmod))); %星座点图乘以随机长度高斯白噪声
+    y=qamdemod(rx,M);%转为对应的点
+    decmsg=graycode(y+1);%格雷逆映射
+ 
+    [err,ser(i)]=symerr(msg,decmsg);%比较符号误差
+end
+
+p16=2*(1-1/sqrt(M))*qfunc(sqrt(3*ebn0/(M-1)));%理论误码率
+ser1=1-(1-p16).^2;
+
+figure()
+%，ser实际错误概率，ser1理论符号错误概率
+semilogy( SNR,ser,'*',SNR,ser1,'-');
+title('16QAM-AWGN符号错误概率分析')
+xlabel('SNR');ylabel('概率');
+legend('仿真值','理论值' );
+
+
+
+%%4QAM，格雷衍射，改编的代码
+nuber_symbol= 10000;%一共有1万个符号用于测试
+M=4;%阶数，表示4QAM
+graycode=[0 1 2 3];%格雷映射，十进制表示
+SNR=-20:1:20;%符号比，单位db,设置步长为1，
+ebn0=10.^(SNR/10);%将db转为非线性的方式
+msg=randi([0,3],1,nuber_symbol);%随机产生0-3的符号，乘nsymbol得到原始数据
+msg1=graycode(msg+1);%格雷映射
+msgmod=qammod(msg1,M);%调用qammod函数，得到调制后的符号
+spow=norm(msgmod).^2/nuber_symbol;%a+bj取模的平方，即功率；功率除以整个符号得到平均功率
+for i= 1:length(SNR)
+    sigma=sqrt(spow/(2*ebn0(i))); 
+    rx=msgmod+sigma*(randn(1,length(msgmod))+1i*randn(1,length(msgmod))); %星座点图乘以随机长度高斯白噪声
+    y=qamdemod(rx,M);%转为对应的点
+    decmsg=graycode(y+1);%格雷逆映射
+ 
+    [err,ser(i)]=symerr(msg,decmsg);%比较符号误差
+end
+
+p4=2*(1-0.5.*qfunc(sqrt(2*ebn0))).*qfunc(sqrt(2*ebn0)); %误码率
+ser1=p4;
+
+figure()
+%，ser实际错误概率，ser1理论符号错误概率
+semilogy( SNR,ser,'*',SNR,ser1,'-');
+title('4QAM-AWGN符号错误概率分析')
+xlabel('SNR');ylabel('概率');
+legend('仿真值','理论值' );

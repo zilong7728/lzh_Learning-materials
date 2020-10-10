@@ -1,0 +1,163 @@
+////画出新的卷积后加噪声的信号
+data=randsrc(128,2);%储存In
+
+t=0:0.01:129;
+t_1=0:0.01:2*129;
+w = 1;
+tfutr = 0.5;
+sfutr = 1;
+g_real=0;
+g_imagine=0;
+h = tripuls(-t+0.5,w,sfutr);
+for i=1:128
+
+g_real =g_real+ data(i,1)*tripuls(t-tfutr-i+1,w,sfutr);
+g_imagine =g_imagine+ data(i,2)*tripuls(t-tfutr-i+1,w,sfutr);
+%生成g(t)函数
+end 
+y_real=awgn(g_real,10,'measured');
+y_imagine=awgn(g_imagine,10,'measured');
+z_real=conv(g_real+y_real,h);
+z_imagine=conv(g_imagine+y_imagine,h);
+  plot(t_1,z_real,'blue');
+  hold on
+  plot(t_1,z_imagine,'red');
+
+
+///4QAM信号
+for SNR=-20:1:30
+    count=0; 
+    
+data_original=randsrc(128,2);%储存In
+data_conclude=rand(128,2);%初始化还原信号
+t01=0;%设定t0为阶跃点
+t02=1;
+t=0:0.1:129;
+t2=0:0.1:258;
+w = 1;
+
+tfutr = 0.5;
+sfutr = 1;
+g_real=0;
+g_imagine=0;
+h = tripuls(-t+0.5,w,sfutr);%新的h(t)信号
+for i=1:128
+g_real =g_real+ data_original(i,1)*tripuls(t-tfutr-i+1,w,sfutr);
+g_imagine =g_imagine+ data_original(i,2)*tripuls(t-tfutr-i+1,w,sfutr);
+%生成g(t)函数
+end 
+y_real=awgn(g_real,SNR);
+y_imagine=awgn(g_imagine,SNR);
+z_real=conv(g_real+y_real,h);%z是新的r(t)信号
+z_imagine=conv(g_imagine+y_imagine,h);%z是新的r(t)信号
+for j=1:128  %信号的采样
+   temp1= (z_real(1,10*j)-1)^2 +(z_imagine(1,10*j)-1)^2;%计算到1+j距离
+   temp2= (z_real(1,10*j)-1)^2 +(z_imagine(1,10*j)+1)^2;%计算到1-j距离
+   temp3= (z_real(1,10*j)+1)^2 +(z_imagine(1,10*j)-1)^2;%计算到-1+j距离
+   temp4= (z_real(1,10*j)+1)^2 +(z_imagine(1,10*j)+1)^2;%计算到-1-j距离
+   temp=[temp1 temp2 temp3 temp4];
+   w=min(temp);
+   if w==temp1
+      data_conclude(j,1) =1;
+      data_conclude(j,2) =1;
+   end
+   if w==temp2
+       data_conclude(j,1) =1;
+      data_conclude(j,2) =-1;           
+   end
+   if w==temp3
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =1; 
+   end
+   if w==temp4
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =-1; 
+   end
+end
+
+for i=1:128
+if (data_original(i,1)~=data_conclude(i,1))||(data_original(i,2)~=data_conclude(i,2))
+  count=count+1;  
+end  
+end
+p=count/128.0;
+%plot(SNR,p,'red');
+%hold on
+plot(SNR,p);
+%ber仿真值，ser比特仿真值，ber1理论误比特率，ser1理论误码率
+semilogy(SNR,p,'o' );
+title('4QAM-AWGN 新信号的符号错误率')
+xlabel('SNR');ylabel('probability');
+legend('符号仿真');
+hold on
+end
+
+
+
+///加入采样错误
+for SNR=-20:1:30
+    count=0; 
+    
+data_original=randsrc(128,2);%储存In
+data_conclude=rand(128,2);%初始化还原信号
+t01=0;%设定t0为阶跃点
+t02=1;
+t=0:0.1:129;
+t2=0:0.1:258;
+w = 1;
+
+tfutr = 0.5;
+sfutr = 1;
+g_real=0;
+g_imagine=0;
+h = tripuls(-t+0.5,w,sfutr);%新的h(t)信号
+for i=1:128
+g_real =g_real+ data_original(i,1)*tripuls(t-tfutr-i+1,w,sfutr);
+g_imagine =g_imagine+ data_original(i,2)*tripuls(t-tfutr-i+1,w,sfutr);
+%生成g(t)函数
+end 
+y_real=awgn(g_real,SNR);
+y_imagine=awgn(g_imagine,SNR);
+z_real=conv(g_real+y_real,h);%z是新的r(t)信号
+z_imagine=conv(g_imagine+y_imagine,h);%z是新的r(t)信号
+for j=1:128  %信号的采样
+   temp1= (z_real(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))-1)^2 +(z_imagine(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))-1)^2;%计算到1+j距离
+   temp2= (z_real(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))-1)^2 +(z_imagine(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))+1)^2;%计算到1-j距离
+   temp3= (z_real(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))+1)^2 +(z_imagine(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))-1)^2;%计算到-1+j距离
+   temp4= (z_real(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))+1)^2 +(z_imagine(1,10*j+randsrc(1,1,[-2 -1 0 1 2]))+1)^2;%计算到-1-j距离
+   temp=[temp1 temp2 temp3 temp4];
+   w=min(temp);
+   if w==temp1
+      data_conclude(j,1) =1;
+      data_conclude(j,2) =1;
+   end
+   if w==temp2
+       data_conclude(j,1) =1;
+      data_conclude(j,2) =-1;           
+   end
+   if w==temp3
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =1; 
+   end
+   if w==temp4
+        data_conclude(j,1) =-1;
+      data_conclude(j,2) =-1; 
+   end
+end
+
+for i=1:128
+if (data_original(i,1)~=data_conclude(i,1))||(data_original(i,2)~=data_conclude(i,2))
+  count=count+1;  
+end  
+end
+p=count/128.0;
+%plot(SNR,p,'red');
+%hold on
+plot(SNR,p);
+%ber仿真值，ser比特仿真值，ber1理论误比特率，ser1理论误码率
+semilogy(SNR,p,'o' );
+title('4QAM-AWGN 新信号的符号错误率加入采样错误')
+xlabel('SNR');ylabel('probability');
+legend('符号仿真');
+hold on
+end

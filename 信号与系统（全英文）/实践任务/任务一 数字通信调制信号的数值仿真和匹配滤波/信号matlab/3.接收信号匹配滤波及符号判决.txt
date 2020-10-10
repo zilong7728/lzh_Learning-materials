@@ -1,0 +1,28 @@
+///画出g(t)经过匹配滤波器后的输出信号
+t=-1:1:10;%设置t的取值范围从0到10，增量为0.01
+t0=-1:1:21;
+t01=0;%设定t0为阶跃点
+t02=1;
+g=stepfun(t,t01)-stepfun(t,t02);%生成g(t)函数
+%在该问题中g(t)和h(t)为同一个函数
+z=conv(g,g);
+plot(t0,z);
+///含有高斯白噪声
+data=randsrc(128,2);%储存In
+t01=0;%设定t0为阶跃点
+t02=1;
+r=0;
+t=0:1:129;
+t0=0:1:2*129;
+g=0;
+h=stepfun(t,t01)-stepfun(t,t02);
+for i=1:128
+
+g=g+data(i,1)*(stepfun(t,t01+i)-stepfun(t,t02+i));%生成g(t)函数
+
+  
+end
+y=awgn(g,10,'measured');
+z=conv(g+y,h);
+  plot(t0,z,'blue');
+ hold on

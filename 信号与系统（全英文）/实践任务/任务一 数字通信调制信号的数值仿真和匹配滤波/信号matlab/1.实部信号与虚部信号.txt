@@ -1,0 +1,45 @@
+///s(t)的实部信号
+
+data=randsrc(128,2);%储存In
+real=0;
+%初始化实部信号
+
+t=0:0.1:129;%设置t的取值范围从0到129，增量为0.01
+t01=0;%设定t0为阶跃点
+t02=1;
+g=stepfun(t,t01)-stepfun(t,t02);%生成g(t)函数
+T=1;
+for i=1:128
+    real=real+data(i,1)*(stepfun(t,t01+i)-stepfun(t,t02+i));%实部作累加
+    plot(t,real);
+    hold on
+    
+    
+    
+    
+    
+end
+
+
+///s(t)的虚部信号
+data=randsrc(128,2);%储存In
+
+imagine=0;%初始化实部和虚部信号
+
+t=0:0.1:129;%设置t的取值范围从0到129，增量为0.01
+t01=0;%设定t0为阶跃点
+t02=1;
+g=stepfun(t,t01)-stepfun(t,t02);%生成g(t)函数
+T=1;
+for i=1:128
+    imagine=imagine+data(i,1)*(stepfun(t,t01+i)-stepfun(t,t02+i));%实部作累加
+    plot(t,imagine);
+    hold on
+    
+     
+end
+
+
+///经过理论计算，平均比特能量是1
+实际计算为2*128/2*128=1
+4QAM实际上与理论不存在误差，因为任意的In能量均为2，当然可以修改程序的参数使得变为16QAM的In，这样理论计算与实际必然会存在误差。

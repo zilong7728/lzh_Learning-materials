@@ -23,9 +23,9 @@ y_imagine = awgn(g_imagine, 10, 'measured');
 %卷积
 z_real = conv(g_real+y_real, h);
 z_imagine = conv(g_imagine+y_imagine, h);
-plot(t_1, z_real, 'blue');
+%plot(t_1, z_real, 'blue');
 hold on
-plot(t_1, z_imagine, 'red');
+%plot(t_1, z_imagine, 'red');
 
 
 
@@ -96,11 +96,12 @@ end
 
 %输出
 p=count/128.0;
-%plot(SNR,p,'red');
-%hold on
+plot(SNR,p,'red');
+hold on
 plot(SNR,p);
+hold on
 %ber仿真值，ser比特仿真值，ber1理论误比特率，ser1理论误码率
-semilogy(SNR,p,'o' );
+semilogy(SNR,p,'*' );
 title('4QAM-AWGN 新信号的符号错误率');
 xlabel('SNR');
 ylabel('probability');
@@ -110,14 +111,14 @@ end
 
 
 
-%加入采样错误
+%part3: 加入采样错误
 for SNR = -20:1:30
     count=0; 
     
 signal_In_part_2 = randsrc(128,2);  %储存In
 signal_In_part_2_noisy = rand(128,2);  %初始化还原信号
 t01 = 0;    %设定t0为阶跃点
-t02 =t01 + 1;
+t02 = t01 + 1;
 t = 0:0.1:129;
 t2 = 0:0.1:258;
 w = 1;
@@ -175,11 +176,12 @@ end
 
 %输出
 p = count / 128.0;
-%plot(SNR,p,'red');
-%hold on
+plot(SNR,p,'red');
+hold on
 plot(SNR, p);
+hold on
 %ber仿真值，ser比特仿真值，ber1理论误比特率，ser1理论误码率
-semilogy(SNR,p,'o' );
+semilogy(SNR,p,'o' )
 title('4QAM-AWGN 新信号的符号错误率加入采样错误')
 xlabel('SNR');ylabel('probability');
 legend('符号仿真');

@@ -12,7 +12,7 @@ t02 = t01 + 1;
 g=stepfun(time,t01)-stepfun(time,t02);  %生成g(t)函数
 for i=1:128
     real_part=real_part+signal_In(i,1)*(stepfun(time,t01+i)-stepfun(time,t02+i));   %实部作累加
-    plot(real_part,'-+r');   %画出实部
+    %plot(real_part,'-+r');   %画出实部
     hold on    %不清除画板，准备继续画虚部
 end
 

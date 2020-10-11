@@ -14,7 +14,7 @@ t02 = t01 + 1;
 g=stepfun(time,t01)-stepfun(time,t02);  %生成g(t)函数
 for i=1:128
     real_part=real_part+signal_In_noisy(i,1)*(stepfun(time,t01+i)-stepfun(time,t02+i));   %实部作累加
-    plot(real_part,'-+r');   %画出实部
+    %plot(real_part,'-+r');   %画出实部
     hold on    %不清除画板，准备继续画虚部
 end
 
@@ -26,7 +26,7 @@ t02 = t01 + 1;
 g=stepfun(time,t01)-stepfun(time,t02);  %生成g(t)函数
 for i=1:128
     imagine_part=imagine_part+signal_In_noisy(i,2)*(stepfun(time,t01+i)-stepfun(time,t02+i));    %虚部作累加
-    %plot(imagine_part,'-*b');    %画出虚部
+    plot(imagine_part,'-*b');    %画出虚部
     hold on    %不清除画板
 end
 
@@ -38,7 +38,7 @@ t02 = t01 + 1;
 g=stepfun(time,t01)-stepfun(time,t02);  %生成g(t)函数
 for i=1:128
     real_part=real_part+(signal_In_noisy(i,1)-signal_In(i,1))*(stepfun(time,t01+i)-stepfun(time,t02+i));   %实部噪声作累加
-    plot(real_part,'-+y');   %画出实部噪声
+    %plot(real_part,'-+y');   %画出实部噪声
     hold on    %不清除画板，准备继续画虚部
 end
 
@@ -50,6 +50,6 @@ t02 = t01 + 1;
 g=stepfun(time,t01)-stepfun(time,t02);  %生成g(t)函数
 for i=1:128
     imagine_part=imagine_part+signal_In_noisy(i,2)*(stepfun(time,t01+i)-stepfun(time,t02+i));    %虚部噪声作累加
-    %plot(imagine_part,'-*k');    %画出虚部噪声
+    plot(imagine_part,'-*y');    %画出虚部噪声
     hold on    %不清除画板
 end

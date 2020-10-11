@@ -6,7 +6,7 @@ t02_part_1 = t01_part_1 + 1;
 g_part_1 = stepfun(t_part_1, t01_part_1) - stepfun(t_part_1, t02_part_1);     %生成g(t)函数
 
 z_part_1 = conv(g_part_1, g_part_1);    %在该问题中g(t)和h(t)为同一个函数，所以卷积可以写成这个形式
-%plot(z_part_1);    %画出g(t)与h(t)卷积的图
+plot(z_part_1);    %画出g(t)与h(t)卷积的图
 
 
 
@@ -27,5 +27,5 @@ end
 y = awgn(g, 10, 'measured');    %添加高斯白噪声
 
 z = conv(g+y, h);    %匹配滤波
-plot (t0, z, 'blue');    %画出滤波后的图
+%plot (t0, z, 'blue');    %画出滤波后的图
 hold on

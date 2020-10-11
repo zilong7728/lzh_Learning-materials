@@ -28,7 +28,7 @@ xlabel('SNR');ylabel('probability');
 legend('比特仿真','符号仿真','理论误比特率' ,'理论符号错误率');
 
 
-///自然映射，仿真结果
+%自然映射，仿真结果
 
 a=sqrt(1/10);
 
@@ -131,7 +131,8 @@ semilogy(snrdb,BER,'o');
 title('16QAM-AWGN比特错误率自然映射');
 xlabel('SNR');
 ylabel('probability');
-////自然映射，理论值
+
+%自然映射，理论值
 a=sqrt(1/10);
 
 %随机生成4000个0/1作为初始信号

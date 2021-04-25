@@ -36,7 +36,7 @@
 		证明微观表达式与宏观表达式等价。
 		
 		设有一段曲线上分布着线密度为$\sigma$的电荷，起点和终点的坐标分别为a和b，如图1。
-		\begin{figure}
+		\begin{figure}[htbp]
 			\centering
 			\includegraphics[scale=0.8]{1.png}
 			\caption{曲线的形状（直径应为0，图中为表现清楚而夸大了直径。）}
@@ -87,8 +87,8 @@
 
 	\section{第三题}
 		平面S'是一个无限大的平面，源点在球面外。设源点在平面上的投影为$P_0$。则对平面上的任意一点$P$，它对应的
-		$\vec{e_R}\cdot\mathrm{d}S$在S'平面上的分量都可以与$P$点关于$P_0$点的对称点$P'$对应的
-		$\vec{e_R}\cdot\mathrm{d}S$在S'平面上的分量相抵消。其结果是：
+		$\vec{e_R}\cdot\mathrm{d}\vec{S}$在S'平面上的分量都可以与$P$点关于$P_0$点的对称点$P'$对应的
+		$\vec{e_R}\cdot\mathrm{d}\vec{S}$在S'平面上的分量相抵消。其结果是：
 		\begin{equation}
 			\vec{e_R}\cdot\mathrm{d}\vec{S} = \mathrm{d}S
 		\end{equation}
@@ -107,6 +107,11 @@
 		使用亥姆霍兹定理解决这个问题的前提是将场分解成散度场和旋度场，并分别求解散度源和旋度源。
 
 	\section{第五题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.7]{5.png}
+			\caption{点电荷产生的电场与a、b}
+		\end{figure}
 		在原式中，从$\int _{r_b} ^{r_a} \vec{E}(r)\cdot(-\vec{e_r}) \mathrm{d}l$
 		到$\int _{r_b} ^{r_a} \vec{E}(r)\cdot(-\vec{e_r}) \mathrm{d}r$的一步在积分变量的替换上出现了问题。
 
@@ -117,7 +122,7 @@
 		正确的推导如下：
 		\begin{equation}
 			\begin{split}
-				V_{ba} &= \phi(b) - \phi(a)\\
+				V_{ba} &= \varphi(b) - \varphi(a)\\
 				&= \int _{r_a} ^{r_b} \vec{E}(r)\cdot\mathrm{d}\vec{l}\\
 				&= \int _{r_a} ^{r_b} \vec{E}(r)\cdot(-\vec{e_r})\mathrm{d}l\\
 				&= \int _{r_a} ^{r_b} \vec{E}(r)\cdot(-\vec{e_r})(-\mathrm{d}r)\\
@@ -160,6 +165,11 @@
 	\section{第九题}
 		思路与第四题基本一致。
 	\section{第十题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.5]{10.png}
+			\caption{圆筒形磁介质}
+		\end{figure}
 		体磁化电流密度为：
 		\begin{equation}
 			\vec{J_M} = \nabla \times (\chi_m \vec{H})=\chi_m \vec{J}
@@ -184,4 +194,67 @@
 			\end{split}
 		\end{equation}
 		可知体磁化电流与面磁化电流之和为0.
+	\section{第十一题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.7]{11.png}
+			\caption{介质与点电荷}
+		\end{figure}
+		由于只有静止点电荷，所以磁场强度与磁感应强度均为0。
+		\begin{equation}
+			\begin{split}
+				\vec{e_n} \times (\vec{H_1} - \vec{H_2}) = 0\\
+				\vec{e_n} \cdot (\vec{B_1} - \vec{B_2}) = 0
+			\end{split}
+ 		\end{equation}
+	\section{第十二题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.6]{12.png}
+			\caption{电荷的空间分布}
+		\end{figure}
+		从xyz空间看，电荷只分布在坐标为$y=y'$的平面上，所以可以用冲激函数来描述这种分布情况。
+		\begin{equation}
+			\rho(x,y,z) = \rho_S(x,z) \cdot \delta(y-y')
+		\end{equation}
+	\section{第十三题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.6]{13.png}
+			\caption{电荷的空间分布}
+		\end{figure}
+		从xOz平面看，电荷只分布在坐标为$z=z'$的直线上。
+		\begin{equation}
+			\rho_S(x,z) = \rho_l(x) \cdot \delta(z-z')
+		\end{equation}
+		从xyz空间看，电荷分布在面xOz中的线$z=z'$上。
+		\begin{equation}
+			\begin{split}
+				\rho(x,y,z) &= \rho_S(x,z) \cdot \delta(y)\\
+				&= \rho_l(x) \cdot \delta(z-z') \cdot \delta(y)
+			\end{split}
+		\end{equation}
+	\section{第十四题}
+		\begin{figure}[htbp]
+			\centering
+			\includegraphics[scale=0.6]{14.png}
+			\caption{电荷的空间分布}			
+		\end{figure}
+		设点电荷$q$的电荷量为$q_0$。
+		\subsection{(a)}
+			在xyz空间中，电荷只分布在点$(5,3,0)$处。
+			\begin{equation}
+				\rho(x,y,z) = q_0 \cdot \delta(x-5) \cdot \delta(y-3) \cdot \delta(z)
+			\end{equation}
+		\subsection{(b)}
+			在xOy平面上，电荷只分布在点$(5,3)$处。
+			\begin{equation}
+				\rho_S(x,y) = q_0 \cdot \delta(x-5) \cdot \delta(y-3)
+			\end{equation}
+		\subsection{(c)}
+			在穿出此点并垂直于面xOy平面的直线上，电荷只分布在$z=0$处。
+			\begin{equation}
+				\rho_l(z) = q_0 \cdot \delta(z)
+			\end{equation}
+
 \end{document}

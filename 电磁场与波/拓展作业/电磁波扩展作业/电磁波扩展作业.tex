@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=1in]{geometry}%设置边距，符合Word设定
+\usepackage{amssymb,amsfonts,amsmath,amsthm}
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+\graphicspath{{Figures/}}%文章所用图片在当前目录下的 Figures目录
+
+\usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
+\hypersetup{colorlinks = true,  % 将链接文字带颜色
+	bookmarksopen = true, % 展开书签
+	bookmarksnumbered = true, % 书签带章节编号
+	pdftitle = 电磁波扩展作业, % 标题
+	pdfauthor =刘正浩 2019270103005} % 作者
+\bibliographystyle{plain}% 参考文献引用格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+\renewcommand{\contentsname}{\centerline{Contents}} %经过设置word格式后，将目录标题居中
+
+
+\title{\heiti\zihao{2} 电磁波扩展作业}				%title
+\author{\songti 刘正浩 2019270103005}
+\date{\today}
+
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+
+%\begin{abstract}
+%	\lipsum[2]
+%\end{abstract}
+
+	\tableofcontents
+
+	\section{第一题}
+		由于在平行（垂直）极化波中的振动方向只有一个方向的单位向量，
+		所以不可能出现垂直于这个方向的单位向量，也就不可能出现任何含有垂直的单位向量成分的极化方向
+
+	\section{第二题}
+		由于反射系数与极化向量的乘积得到反射波的极化向量，根据计算可知反射波的两个相位之差仍然与入射波的两个相位之差，
+		所以反射波的旋向与入射波的旋向一定相等；但由于反射波的传播方向与入射波相反，所以综合起来看极化方向是翻转的。
+	\end{document}

@@ -1,0 +1,208 @@
+{
+  "uuid": "8d7bfe60be5d586cc062f02406c1f5b0",
+  "path": "Offline/gcgc",
+  "name": "gcgc",
+  "content": "",
+  "created_at": "2021-07-03 11:30:23",
+  "updated_at": "2021-07-03 22:01:49",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "1232ef613ae4a14f22080304c3f03e3c",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "c1b8b3cd4f2546a9a52cea52fad69d73": 1,
+        "d929f32ebfa44223a3d5d71ff47b7d41": 2,
+        "0108e706474c4f03899fdcdebecb6234": 1,
+        "a9aa2b14f188405792fa87ac344499a4": 3,
+        "007a280e5d7442429fb0e657c90d4ee3": 1,
+        "d044c30f72d5eb25f087040b250ae237": 1,
+        "2f2c771dc147fb0210616ca49e419712": 1,
+        "a052559478a14ee2b9e3514bee4ff72d": 3,
+        "ea9706eeb6bc4dbfbce96f1727560a74": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          1,
+          "C0805",
+          "C3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "CC0805KRX7R9BB104",
+            "BOM_Manufacturer": "YAGEO",
+            "BOM_Supplier Part": "C49678",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "2ee8eb13a0124a108e622ce40c0c25a8",
+            "uuid": "2f2c771dc147fb0210616ca49e419712"
+          }
+        ],
+        [
+          "CJ7805",
+          1,
+          "TO-263-2_L10.1-W9.1-P5.08-LS15.2-TL",
+          "U4",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CJ",
+            "BOM_Manufacturer Part": "CJ7805",
+            "BOM_Supplier Part": "C131137",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "73b08a8babad40a4bd3ac52365cfe07c",
+            "uuid": "007a280e5d7442429fb0e657c90d4ee3"
+          }
+        ],
+        [
+          "ULN2003ADR",
+          1,
+          "SOIC-16_L9.9-W3.9-P1.27-LS6.0-BL",
+          "U3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "TI",
+            "BOM_Manufacturer Part": "ULN2003ADR",
+            "BOM_Supplier Part": "C7512",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "5cafa9ae5a9e4b2ab529c9f08b47eb94",
+            "uuid": "0108e706474c4f03899fdcdebecb6234"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x2",
+          3,
+          "HDR-M-2.54_1X2",
+          "J4,J5,J6",
+          {
+            "BOM_Supplier Part": "C124375",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "70aa5812f21f4991bf427395d51849f4",
+            "uuid": "a9aa2b14f188405792fa87ac344499a4"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x5",
+          3,
+          "HDR-M-2.54_1X5",
+          "J3,J1,J2",
+          {
+            "BOM_Supplier Part": "C358687",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "108969f8d9834a9ea23bcec2d43a66e4",
+            "uuid": "a052559478a14ee2b9e3514bee4ff72d"
+          }
+        ],
+        [
+          "2185B-112SSNCUNT1",
+          1,
+          "HDR-TH_12P-P2.54-V-F",
+          "H1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C721800",
+            "BOM_Manufacturer": "Wcon",
+            "BOM_Manufacturer Part": "2185B-112SSNCUNT1",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "b111ea66e8384780b5ead25874f3491d",
+            "uuid": "c1b8b3cd4f2546a9a52cea52fad69d73"
+          }
+        ],
+        [
+          "330nF",
+          1,
+          "C0805",
+          "C1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "FH",
+            "BOM_Manufacturer Part": "0805B334K500NT",
+            "BOM_Supplier Part": "C1740",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "2ee8eb13a0124a108e622ce40c0c25a8",
+            "uuid": "d044c30f72d5eb25f087040b250ae237"
+          }
+        ],
+        [
+          "SN74AHCT08DR",
+          2,
+          "SOIC-14_L8.7-W3.9-P1.27-LS6.0-BL",
+          "U1,U2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "TI",
+            "BOM_Manufacturer Part": "SN74AHCT08DR",
+            "BOM_Supplier Part": "C7480",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "0f2364c02f094100b1b3205c9d829099",
+            "uuid": "d929f32ebfa44223a3d5d71ff47b7d41"
+          }
+        ],
+        [
+          "SS-12D06L5",
+          1,
+          "SW-TH_3P-P4.70_L11.1-W12.7",
+          "SW1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C319015",
+            "BOM_Manufacturer": "XKB Enterprise",
+            "BOM_Manufacturer Part": "SS-12D06L5",
+            "BOM_Paste Type": "expand",
+            "puuid": "359ee04fd630400f898f0d739d9392e7",
+            "uuid": "ea9706eeb6bc4dbfbce96f1727560a74"
+          }
+        ]
+      ],
+      "updateTime": 1625320909,
+      "createTime": 1625283027,
+      "histories": [],
+      "created_at": "2021-07-03 11:30:27",
+      "updated_at": "2021-07-03 22:01:49"
+    },
+    {
+      "uuid": "dc113687a4614a37e198dcf0477bf530",
+      "puuid": "8d7bfe60be5d586cc062f02406c1f5b0",
+      "title": "PCB_gcgc",
+      "filename": "PCB_gcgc.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "2ee8eb13a0124a108e622ce40c0c25a8": 4,
+        "73b08a8babad40a4bd3ac52365cfe07c": 2,
+        "5cafa9ae5a9e4b2ab529c9f08b47eb94": 1,
+        "70aa5812f21f4991bf427395d51849f4": 3,
+        "108969f8d9834a9ea23bcec2d43a66e4": 3,
+        "b111ea66e8384780b5ead25874f3491d": 1,
+        "0f2364c02f094100b1b3205c9d829099": 2,
+        "359ee04fd630400f898f0d739d9392e7": 1
+      },
+      "BOM": [],
+      "updateTime": 1625320885,
+      "createTime": 1625320885,
+      "histories": [],
+      "created_at": "2021-07-03 22:01:25",
+      "updated_at": "2021-07-03 22:01:25"
+    }
+  ],
+  "sort": [],
+  "title": "gcgc",
+  "foldername": "gcgc",
+  "schfilename": "gcgc.json",
+  "schfilemtime": 1625320909480
+}

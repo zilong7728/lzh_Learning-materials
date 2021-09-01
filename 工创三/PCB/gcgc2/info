@@ -1,0 +1,86 @@
+{
+  "uuid": "97c1d186701ba39a6d4853c43f1967c2",
+  "path": "Offline/gcgc2",
+  "name": "gcgc2",
+  "content": "",
+  "created_at": "2021-07-03 21:28:48",
+  "updated_at": "2021-07-03 21:34:38",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "5880436aaa3f90b626595d3ddbc0fad7",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "c1b8b3cd4f2546a9a52cea52fad69d73": 1,
+        "a9aa2b14f188405792fa87ac344499a4": 1,
+        "f5b1d9403e49471cab43bc5a1bec336f": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "HDR-M-2.54_1x2",
+          1,
+          "HDR-M-2.54_1X2",
+          "J6",
+          {
+            "BOM_Supplier Part": "C124375",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "70aa5812f21f4991bf427395d51849f4",
+            "uuid": "a9aa2b14f188405792fa87ac344499a4"
+          }
+        ],
+        [
+          "2185B-112SSNCUNT1",
+          1,
+          "HDR-TH_12P-P2.54-V-F",
+          "H1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C721800",
+            "BOM_Manufacturer": "Wcon",
+            "BOM_Manufacturer Part": "2185B-112SSNCUNT1",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "b111ea66e8384780b5ead25874f3491d",
+            "uuid": "c1b8b3cd4f2546a9a52cea52fad69d73"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x4",
+          1,
+          "HDR-M-2.54_1X4",
+          "J1",
+          {
+            "BOM_Supplier Part": "C124378",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "282f7786cb6144d097ae00194c3e3fb3",
+            "uuid": "f5b1d9403e49471cab43bc5a1bec336f"
+          }
+        ]
+      ],
+      "updateTime": 1625319278,
+      "createTime": 1625318930,
+      "histories": [],
+      "created_at": "2021-07-03 21:28:50",
+      "updated_at": "2021-07-03 21:34:38"
+    }
+  ],
+  "sort": [],
+  "title": "gcgc2",
+  "foldername": "gcgc2",
+  "schfilename": "gcgc2.json",
+  "schfilemtime": 1625319278345
+}
